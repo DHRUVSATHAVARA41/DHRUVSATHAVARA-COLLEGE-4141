@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+    <style>
+        #mydiv,
+        #myhomediv,
+        #myhorizontaldiv,
+        #myverticaldiv,
+        #mythreesecondsdelaydiv,
+        #myfiftypixeldiv {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background: brown;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        #myfiftypixeldiv {
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            background: brown;
+            color: white;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        #mydiv,
+        #myhomediv,
+        #myhorizontaldiv,
+        #myverticaldiv,
+        #mythreesecondsdelaydiv,
+        #myfiftypixeldiv {
+            border: solid 3px #000000;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#mydiv").draggable();
+
+            $("#myhomediv span").draggable({
+                containment: "myhomediv"
+            });
+            $("#myhorizontaldiv span").draggable({
+                axis: "x"
+            });
+            $("#myverticaldiv span").draggable({
+                axis: "y"
+            });
+            $("#mythreesecondsdelaydiv").draggable({
+                distance: 200
+            });
+            $("#myfiftypixeldiv").draggable({
+                delay: 3000
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="mydiv">
+        <p>Hello Student...</p>
+    </div>
+    <hr>
+    <div id="myhomediv">
+        <span>This Is My home and I Can move within it only...</span>
+    </div>
+    <hr>
+    <div id="myhorizontaldiv">
+        <span>I Can Move Only Horizontaly...</span>
+    </div>
+    <hr>
+    <div id="myverticaldiv">
+        <span>I Can Move Only verticaly...</span>
+    </div>
+    <hr>
+    <div id="mythreesecondsdelaydiv">
+        <span>I Can Move Only After 3 Seconds...</span>
+    </div>
+    <hr>
+    <div id="myfiftypixeldiv">
+        <span>I Can Only After 200 PX...</span>
+    </div>
+    <hr>
+
+
+</body>
+
+</html>
